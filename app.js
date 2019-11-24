@@ -1,6 +1,8 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+
+var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
@@ -8,6 +10,15 @@ var usersRouter = require('./routes/users');
 
 const recordsRouter = require('./routes/records');
 
+const records1Router = require('./routes/records1');
+
+const records2Router = require('./routes/records2');
+
+const records3Router = require('./routes/records3');
+
+const records4Router = require('./routes/records4');
+
+const records5Router = require('./routes/records5');
 var app = express();
 
 // view engine setup
@@ -18,11 +29,23 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.get('/records', recordsRouter);
+
+app.get('/records1', records1Router);
+
+app.get('/records2', records2Router);
+
+app.get('/records3', records3Router);
+
+app.get('/records4', records4Router);
+
+app.get('/records5', records5Router);
 var MongoClient = require('mongodb').MongoClient;
 
 // var mongoose = require('mongoose');

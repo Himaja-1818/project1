@@ -1,0 +1,28 @@
+<p>welcome to mongodb</p>
+
+<div>
+    <table>
+        <tr>
+            <th>name</th>
+            <th>age</th> 
+            <th>gender</th>
+            <th>city</th>
+          </tr>
+<%for(let j=0;j<length;j++){%>
+     <tr>
+      <td><%=result1[j].name%></td>
+      <td><%=result1[j].age%></td>
+      
+      <td><%=result1[j].gender%></td>
+      
+      <td><%=result1[j].city%></td>
+    </tr>
+<%}%>
+    </table>
+    </div>
+    <!-- Pagination code-->
+    <div class="pagination">
+        <% for(let i=0;i<page;i++){%>
+                <a href="/records5?skipValue=<%=i%>"><%=i%></a>
+        <% }%>
+    </div>

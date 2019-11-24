@@ -13,7 +13,7 @@
     "express-ejs-layouts": "^2.5.0",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
-    "mongodb": "~2.1.11",
+    "mongodb": "^2.1.21",
     "morgan": "~1.9.1"
   },
   "main": "app.js",
