@@ -1,12 +1,16 @@
 <p>welcome to mongodb</p>
 
-<div>
-    <table>
+    
+<a href="/getDetails">Add New Record</a>
+<div style="overflow-x:auto;">
+        <table width="1300" border="6">
         <tr>
-            <th>name</th>
-            <th>age</th> 
-            <th>gender</th>
-            <th>city</th>
+            <th style="color:cyan">name</th>
+            <th style="color:cyan">age</th>
+            <th style="color:cyan">gender</th>
+           
+            <th style="color:cyan">city</th>
+           
           </tr>
 <%for(let j=0;j<length;j++){%>
      <tr>
@@ -18,6 +22,7 @@
       <td><%=result1[j].city%></td>
     </tr>
 <%}%>
+
     </table>
     </div>
     <!-- Pagination code-->
@@ -26,3 +31,4 @@
                 <a href="/records5?skipValue=<%=i%>"><%=i%></a>
         <% }%>
     </div>
+    

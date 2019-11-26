@@ -1,31 +1,3 @@
-// var express = require('express');
-// var router = express.Router();
-// var MongoClient = require('mongodb').MongoClient;
-// var url = "mongodb://localhost:27017";
-// /* GET home page. */
-  
-// router.get('/records5', function(req, res, next) {
-//     var perPage = 10
-//     var page = req.params.page || 1
-//     MongoClient.connect(url,{ useUnifiedTopology: true }, function(err, db) {
-//         if (err) throw err;
-//        const dbo = db.db("mydb");
-//         dbo.collection("customers").find({}).skip((perPage * page) - perPage)
-//             .limit(perPage)
-//             .exec(function(err, customers) {
-//                  customers.count().exec(function(err, count) {
-//                     if (err) return next(err)
-//                     console.log(customers)
-//                      res.render('records5view', {
-//                          customers:customers,
-//                          current: page,
-//                          pages: Math.ceil(count / perPage)
-//                 })
-//             })
-//         })
-//     })
-// })
-//   module.exports = router;
 var express = require('express');
 var router = express.Router();
 var mongo = require('mongodb');
@@ -57,7 +29,6 @@ router.get('/records5', function(req, res, next) {
       
       })
     });
-
-  });
+ });
 });
 module.exports = router;

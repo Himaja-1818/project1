@@ -19,6 +19,10 @@ const records3Router = require('./routes/records3');
 const records4Router = require('./routes/records4');
 
 const records5Router = require('./routes/records5');
+
+const getDetailsRouter = require('./routes/getDetails');
+
+const submitDetailsRouter = require('./routes/submitDetails');
 var app = express();
 
 // view engine setup
@@ -46,6 +50,11 @@ app.get('/records3', records3Router);
 app.get('/records4', records4Router);
 
 app.get('/records5', records5Router);
+
+
+app.get('/getDetails', getDetailsRouter);
+
+app.post('/submitDetails', submitDetailsRouter);
 var MongoClient = require('mongodb').MongoClient;
 
 // var mongoose = require('mongoose');
