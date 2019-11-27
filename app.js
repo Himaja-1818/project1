@@ -20,6 +20,10 @@ const records4Router = require('./routes/records4');
 
 const records5Router = require('./routes/records5');
 
+const records6Router = require('./routes/records6');
+
+const nullRouter = require('./routes/null');
+
 const getDetailsRouter = require('./routes/getDetails');
 
 const submitDetailsRouter = require('./routes/submitDetails');
@@ -51,6 +55,9 @@ app.get('/records4', records4Router);
 
 app.get('/records5', records5Router);
 
+app.post('/null', nullRouter);
+
+app.post('/records6', records6Router);
 
 app.get('/getDetails', getDetailsRouter);
 

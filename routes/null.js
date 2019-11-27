@@ -4,15 +4,15 @@ var mongo = require('mongodb');
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 
-router.post('/submitDetails', function(req, res, next) {
+router.post('/null', function(req, res, next) {
 
     MongoClient.connect(url, function(err, db) {
          if (err) throw err;
          dbo = db.db("mydb");
-         myobj = { name: "vennela", age:21 , gender:"female" ,city: "chennai"  };
-         dbo.collection("customers").insertOne(myobj, function(err, result) {
+         myobj = { name: "vennela", age:23 , gender:"male" ,city: "chennai"  };
+         dbo.collection("customers").updateOne(myobj, function(err, result) {
          if (err) throw err;
-         console.log("1 document inserted");
+         console.log("1 document updated");
          db.close();
          res.redirect('/')
         });
