@@ -27,6 +27,8 @@ const nullRouter = require('./routes/null');
 const getDetailsRouter = require('./routes/getDetails');
 
 const submitDetailsRouter = require('./routes/submitDetails');
+
+const updateRecordRouter = require('./routes/updateRecord');
 var app = express();
 
 // view engine setup
@@ -62,6 +64,8 @@ app.post('/records6', records6Router);
 app.get('/getDetails', getDetailsRouter);
 
 app.post('/submitDetails', submitDetailsRouter);
+
+app.post('/updateRecord', updateRecordRouter);
 var MongoClient = require('mongodb').MongoClient;
 
 // var mongoose = require('mongoose');
