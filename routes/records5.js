@@ -6,7 +6,7 @@ var url = "mongodb://localhost:27017";
 /* GET home page. */
   
 router.get('/records5', function(req, res, next) {
- const limitValue = 10;
+ const limitValue = 7;
  const skipValue = parseInt(req.query.skipValue)
   MongoClient.connect(url,{ useUnifiedTopology: true }, function(err, db) {
     if (err) throw err;
@@ -14,7 +14,7 @@ router.get('/records5', function(req, res, next) {
     
    dbo.collection("customers").find().toArray(function(err, result1) { 
        if (err) throw err;
-       dbo.collection("customers").find().limit(10).skip(skipValue*limitValue).toArray(function(err, result2) { 
+       dbo.collection("customers").find().limit(7).skip(skipValue*limitValue).toArray(function(err, result2) { 
         if (err) throw err;
       
       db.close();

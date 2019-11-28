@@ -29,6 +29,8 @@ const getDetailsRouter = require('./routes/getDetails');
 const submitDetailsRouter = require('./routes/submitDetails');
 
 const updateRecordRouter = require('./routes/updateRecord');
+
+const deleteRecordRouter = require('./routes/deleteRecord');
 var app = express();
 
 // view engine setup
@@ -45,7 +47,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.get('/records', recordsRouter);
+app.post('/records', recordsRouter);
 
 app.get('/records1', records1Router);
 
@@ -66,6 +68,8 @@ app.get('/getDetails', getDetailsRouter);
 app.post('/submitDetails', submitDetailsRouter);
 
 app.post('/updateRecord', updateRecordRouter);
+
+app.post('/deleteRecord', deleteRecordRouter);
 var MongoClient = require('mongodb').MongoClient;
 
 // var mongoose = require('mongoose');
