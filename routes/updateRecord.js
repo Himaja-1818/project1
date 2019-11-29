@@ -9,12 +9,16 @@ router.post('/updateRecord', function(req, res, next) {
     MongoClient.connect(url, function(err, db) {
          if (err) throw err;
          dbo = db.db("mydb");
-         dbo.collection("customers").updateOne({name:"vennela"},{name:"vennela",age:27,gender:"male",city:"mumbai"},{upsert:true})
+         dbo.collection("customers").updateOne({name:req.body.name},{ $set:
+            {
+              age:27}},{upsert:true},function(err, result) {
          if (err) throw err;
-         console.log("1 document updated");
+         console.log('result1',result.result);
+
+        
          db.close();
-         res.redirect('/')
-    
+         res.redirect('/');
+              })
     });
 });
 
