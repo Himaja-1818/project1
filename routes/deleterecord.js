@@ -7,7 +7,10 @@ var url = "mongodb://localhost:27017/";
 router.post('/deleteRecord', function(req, res, next) {
 
     MongoClient.connect(url, function(err, db) {
-         if (err) throw err;
+         if (err) {
+             res.send('Some Issue with MONGO');
+             return;
+         };
          dbo = db.db("mydb");
          dbo.collection("customers").deleteOne({name:req.body.name},{ unique:true},function(err, result) {
          if (err) throw err;
