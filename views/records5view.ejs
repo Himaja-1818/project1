@@ -1,51 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Page Title</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-/* Style the body */
-body {
-  font-family: Arial;
-  margin: 0;
-}
 
-.header {
-    padding: 60px;
-    text-align: center;
-    background: #1a6ebc;
-    color: white;
-    font-size: 30px;
-  }
-  .footer {
-     position: fixed;
-     left: 0;
-     bottom: 0;
-     width: 100%;
-     background-color: rgb(43, 116, 226);
-     color: white;
-     text-align: center;
-  }
-  
-/* Page Content */
-.content {padding:20px;}
-</style>
-</head>
-<body>
+<%- include('header') %>
+<p>welcome to mongodb</p>
 
-  <div class="header">
-                
-                <h2>welcome to mongodb</h2>
-              </div>
-
-
-              <div class="footer">
-                
-<a href="/getDetails">Update Record</a><br>
-
-<a href="/getDetails">Delete Record</a>
-                  </div>
     
 <a href="/getDetails">Add New Record</a>
 <div style="overflow-x:auto;">
@@ -71,8 +27,9 @@ body {
 
     </table>
     
+<a href="/getDetails">Update Record</a><br>
 
-<a href="/header"> header</a>
+<a href="/getDetails">Delete Record</a>
     </div>
     <!-- Pagination code-->
     <div class="pagination">
@@ -80,4 +37,5 @@ body {
                 <a href="/records5?skipValue=<%=i%>"><%=i%></a>
         <% }%>
     </div>
-    
+
+    <%- include('footer') %>
