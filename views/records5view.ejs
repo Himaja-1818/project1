@@ -12,6 +12,10 @@
             <th style="color:cyan">gender</th>
            
             <th style="color:cyan">city</th>
+            
+            <th style="color:cyan">delete</th>
+            
+            <th style="color:cyan">insert</th>
            
           </tr>
 <%for(let j=0;j<length;j++){%>
@@ -22,7 +26,10 @@
       <td><%=result1[j].gender%></td>
       
       <td><%=result1[j].city%></td>
-    </tr>
+      
+<td><a href="/delete?name=<%=result1[j].name%>">remove</a></td>
+
+</tr>
 <%}%>
 
     </table>

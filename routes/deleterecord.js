@@ -1,18 +1,18 @@
 var express = require('express');
 var router = express.Router();
 var mongo = require('mongodb');
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/";
 
+const mongoConnection = require('./connection').mongoConnection;
+//var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/";
+const dbName = 'mydb';
 router.post('/deleteRecord', function(req, res, next) {
 
-    MongoClient.connect(url, function(err, db) {
-         if (err) {
-             res.send('Some Issue with MONGO');
-             return;
-         };
-         dbo = db.db("mydb");
-         dbo.collection("customers").deleteOne({name:req.body.name},{ unique:true},function(err, result) {
+   name = req.query.name;
+    mongoConnection().then((client) => {
+        const db = client.db(dbName);
+        const collection = db.collection('customers');
+          dbo.collection("customers").deleteOne({name:req.body.name},{ unique:true},function(err, result) {
          if (err) throw err;
          console.log("1 document deleted");
          console.log(result.result);
